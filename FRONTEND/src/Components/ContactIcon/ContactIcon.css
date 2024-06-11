@@ -1,0 +1,84 @@
+.contact-icon {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1002;
+  transition: transform 0.3s ease; /* Added transition for smooth icon movement */
+}
+
+.icon {
+  background-color: #711919;
+  color: #fff;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Added transition for background color change */
+}
+
+.contact-card {
+  position: relative;
+  bottom: 30px; /* Increased from 60px to give more space */
+  left: 20px;
+  background-color: #fff;
+  color: #640f0f;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.contact-card.open {
+  visibility: visible;
+  opacity: 1; /* Fade in effect */
+  transform: translateY(-20px); /* Slide down effect */
+}
+
+.agent-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.agent-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.agent-details {
+  flex-grow: 1;
+}
+
+.agent-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.agent-title {
+  color: #666;
+}
+
+.close-icon {
+  cursor: pointer;
+}
+
+.contact-buttons {
+  display: flex;
+}
+
+.contact-buttons a {
+  margin-right: 10px;
+  color: #333;
+  width: 30px;
+}
+
+.contact-buttons a:last-child {
+  margin-right: 0;
+}
