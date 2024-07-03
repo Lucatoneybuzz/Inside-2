@@ -3,6 +3,8 @@ import axios from 'axios';
 import { FiPhone, FiMail, FiFacebook, FiInstagram, FiLinkedin } from 'react-icons/fi';
 import bespoke1 from '../Components/Assests/bespoke1.jpg';
 import { motion } from 'framer-motion';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -20,32 +22,40 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('https://inside-2-api.vercel.app/contact', formData);
-      alert('Message sent successfully!');
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        message: ''
-      });
+      const response = await axios.post('https://formspree.io/f/mjkbvrwp', formData); // Replace with your Formspree form ID
+      if (response.status === 200) {
+        toast.success('Message sent successfully!');
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          message: ''
+        });
+      } else {
+        toast.error('Failed to send message. Please try again later.');
+      }
     } catch (error) {
-      alert('Failed to send message. Please try again later.');
+      toast.error('Failed to send message. Please try again later.');
     }
   };
 
   return (
     <div className="max-w-4xl mx-auto py-8 px-4 md:px-0">
+      <ToastContainer />
       <h1 className="text-4xl md:text-7xl font-extrabold mt-16 text-red-950">Contact Us</h1>
       <p className="text-lg mt-4 text-center text-gray-600">
         Over the years, we've built a strong presence offline and online, and are known for our credibility and reliability in delivering what we offer.
       </p>
       <div className="flex flex-wrap items-center justify-between mt-10">
         <div className="w-full md:w-1/2 mb-8 md:mb-0 md:pr-10">
-        <motion.img
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          src={bespoke1} alt="Office" className="rounded-lg mb-6" />
+          <motion.img
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            src={bespoke1}
+            alt="Office"
+            className="rounded-lg mb-6"
+          />
           <div className="mb-6">
             <p>
               <FiPhone className="inline-block mr-2" />
