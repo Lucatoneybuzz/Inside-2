@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Use the contactRoutes
-app.use('/', contactRoutes);
+app.use('https://inside-2-frontend.vercel.app', contactRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
