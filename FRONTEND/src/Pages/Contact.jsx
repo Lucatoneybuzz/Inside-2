@@ -20,7 +20,7 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5500/contact', formData);
+      await axios.post('https://inside-2-api.vercel.app/contact', formData);
       alert('Message sent successfully!');
       setFormData({
         name: '',

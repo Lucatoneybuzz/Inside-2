@@ -71,32 +71,33 @@ const ConsultationForm = () => {
           </select>
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="projectDetails">
-            What does your project entail?
-          </label>
-          <div className="flex flex-col">
-            <label className="inline-flex items-center">
-              <input type="checkbox" className="form-checkbox" />
-              <span className="ml-2">Finishing & Furnishings</span>
-            </label>
-            <label className="inline-flex items-center">
-              <input type="checkbox" className="form-checkbox" />
-              <span className="ml-2">Remodeling & Renovation</span>
-            </label>
-            <label className="inline-flex items-center">
-              <input type="checkbox" className="form-checkbox" />
-              <span className="ml-2">3D Design</span>
-            </label>
-            <label className="inline-flex items-center">
-              <input type="checkbox" className="form-checkbox" />
-              <span className="ml-2">Interior Shopping</span>
-            </label>
-            <label className="inline-flex items-center">
-              <input type="checkbox" className="form-checkbox" />
-              <span className="ml-2">Furniture Production</span>
-            </label>
-          </div>
-        </div>
+  <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="projectDetails">
+    What does your project entail?
+  </label>
+  <div className="flex flex-wrap">
+    <label className="inline-flex items-center mr-4 mb-2">
+      <input type="checkbox" className="form-checkbox" />
+      <span className="ml-2">Finishing & Furnishings</span>
+    </label>
+    <label className="inline-flex items-center mr-4 mb-2">
+      <input type="checkbox" className="form-checkbox" />
+      <span className="ml-2">Remodeling & Renovation</span>
+    </label>
+    <label className="inline-flex items-center mr-4 mb-2">
+      <input type="checkbox" className="form-checkbox" />
+      <span className="ml-2">3D Design</span>
+    </label>
+    <label className="inline-flex items-center mr-4 mb-2">
+      <input type="checkbox" className="form-checkbox" />
+      <span className="ml-2">Interior Shopping</span>
+    </label>
+    <label className="inline-flex items-center mb-2">
+      <input type="checkbox" className="form-checkbox" />
+      <span className="ml-2">Furniture Production</span>
+    </label>
+  </div>
+</div>
+
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="projectDescription">
             Please describe what you need us to do
